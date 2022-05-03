@@ -13,23 +13,27 @@ class MimeconExample extends StatefulWidget {
 }
 
 class _MimeconExampleState extends State<MimeconExample> {
+  Map<String, String> mimetypeExample = {
+    "Image jpg mimetype": "image/jpg",
+    "Pdf mimetype": "application/pdf",
+  };
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            ListTile(
+        body: ListView.builder(
+          itemCount: mimetypeExample.length,
+          itemBuilder: (context, index) {
+            String key = mimetypeExample.keys.elementAt(index);
+            return ListTile(
               leading: Mimecon(
-                mimetype: "imagejpg",
+                mimetype: mimetypeExample[key]!,
                 color: Colors.red,
                 size: 40,
               ),
-              title: Text("test"),
-            )
-          ],
+              title: Text(key),
+            );
+          },
         ),
       ),
     );
