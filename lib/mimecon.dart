@@ -10,12 +10,9 @@ class Mimecon extends StatefulWidget {
   final String mimetype;
   final Color? color;
   final double? size;
-  Mimecon({
-    Key? key,
-    required this.mimetype,
-    this.color,
-    this.size,
-  })  : assert(mimetype.isNotEmpty),
+  final bool? isOutlined;
+  Mimecon({Key? key, required this.mimetype, this.color, this.size, this.isOutlined = false})
+      : assert(mimetype.isNotEmpty),
         super(key: key);
 
   @override
@@ -107,6 +104,30 @@ class _MimeconState extends State<Mimecon> {
     } else if (libreOfficeCalcMimeType.contains(mimeType)) {
       return Icon(
         MdiIcons.fileTable,
+        color: iconColor,
+        size: iconSize,
+      );
+    } else if (compressedFileMimeType.contains(mimeType)) {
+      return Icon(
+        MdiIcons.folderZip,
+        color: iconColor,
+        size: iconSize,
+      );
+    } else if (ebookMimeType.contains(mimeType)) {
+      return Icon(
+        MdiIcons.bookshelf,
+        color: iconColor,
+        size: iconSize,
+      );
+    } else if (codeMimeType.contains(mimeType)) {
+      return Icon(
+        MdiIcons.fileCode,
+        color: iconColor,
+        size: iconSize,
+      );
+    } else if (calendarMimeType.contains(mimeType)) {
+      return Icon(
+        MdiIcons.calendar,
         color: iconColor,
         size: iconSize,
       );

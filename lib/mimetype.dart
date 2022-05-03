@@ -8,6 +8,8 @@ List<String> imageMimeType = [
   "image/bmp",
   "image/svg+xml",
   "image/webp",
+  "image/vnd.microsoft.icon",
+  "image/webp",
 ];
 
 List<String> videoMimeType = [
@@ -21,6 +23,10 @@ List<String> videoMimeType = [
   "video/quicktime",
   "video/mpeg",
   "video/x-ms-wmv",
+  "video/x-msvideo",
+  "video/ogg",
+  "video/mp2t",
+  "video/3gpp2"
 ];
 
 List<String> audioMimeType = [
@@ -31,8 +37,13 @@ List<String> audioMimeType = [
   "audio/ogg",
   "audio/x-vorbis+ogg",
   "audio/mp4",
+  "audio/wav",
   "audio/x-wav",
   "audio/x-ms-wma",
+  "audio/aac",
+  "audio/opus",
+  "audio/webm",
+  "audio/3gpp2"
 ];
 
 List<String> docMimeType = [
@@ -46,6 +57,8 @@ List<String> docMimeType = [
   "application/word",
   "application/x-msw6",
   "application/x-msword",
+  "application/x-abiword",
+  "application/x-freearc"
 ];
 
 List<String> excelMimeType = [
@@ -104,16 +117,56 @@ List<String> libreOfficeCalcMimeType = [
   "application/x-vnd.oasis.opendocument.spreadsheet",
 ];
 
+List<String> ebookMimeType = ["application/vnd.amazon.ebook", "application/epub+zip"];
+
+List<String> compressedFileMimeType = [
+  "application/gzip",
+  "application/zip",
+  "application/x-bzip",
+  "application/x-bzip2",
+  "application/x-zip-compressed",
+  "application/x-tar",
+  "application/x-tar-gz",
+  "application/vnd.rar",
+  "application/x-7z-compressed",
+];
+
+List<String> codeMimeType = [
+  "text/html",
+  "text/css",
+  "text/javascript",
+  "application/java-archive",
+  "application/x-httpd-php",
+  "application/x-sh",
+  "application/xml",
+  "application/xhtml+xml",
+];
+
+List<String> calendarMimeType = ["text/calendar"];
+
+List<String> jsonMimeType = [
+  "application/json",
+  "application/ld+json",
+];
+
+List<String> fontMimeType = [
+  "font/otf",
+  "font/ttf",
+  "font/woff",
+  "font/woff2",
+];
+
 List<String> genericMimeType = [
   "text/plain",
   "application/octet-stream",
-  "application/zip",
-  "application/x-zip-compressed",
-  "application/x-tar-gz",
   "text/csv",
   "text/vtt",
-  "application/xml",
-  "application/json",
   "application/msword",
   "application/mswrite",
+  "application/vnd.ms-fontobject",
+  "application/ogg",
+  "application/vnd.apple.installer+xml",
+  "application/rtf",
+  "application/x-shockwave-flash",
+  "application/vnd.visio",
 ];
