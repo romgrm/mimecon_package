@@ -1,5 +1,4 @@
 #Code
----
 
 ```
 class _MimeconExampleState extends State<MimeconExample> {
@@ -51,7 +50,6 @@ Map<String, MimetypeEntity> mimeTypeData = {
 ```
 
 # Ouput
----
 
 ![image](example.png)
 
