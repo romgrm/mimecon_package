@@ -1,16 +1,57 @@
-# example
+#Code
+---
 
-A new Flutter project.
+```
+class _MimeconExampleState extends State<MimeconExample> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: SafeArea(
+          child: Column(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(25),
+                child: const Text("Mimecon Example"),
+              ),
+              Expanded(
+                child: ListView.separated(
+                  shrinkWrap: true,
+                  itemCount: mimeTypeData.length,
+                  itemBuilder: (context, index) {
+                    String key = mimeTypeData.keys.elementAt(index);
+                    return ListTile(
+                      leading: Mimecon(
+                        mimetype: mimeTypeData[key]!.mimetype,
+                        color: mimeTypeData[key]!.color,
+                        size: mimeTypeData[key]!.size,
+                        isOutlined: mimeTypeData[key]!.isOutlined,
+                      ),
+                      title: Text(key),
+                    );
+                  },
+                  separatorBuilder: (context, index) => const Divider(),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
 
-## Getting Started
+Map<String, MimetypeEntity> mimeTypeData = {
+  "Image jpg mimetype": MimetypeEntity(mimetype: "image/jpg", color: Colors.green, size: 40, isOutlined: false),
+  "Pdf mimetype little": MimetypeEntity(mimetype: "application/pdf", color: Colors.blue, size: 25),
+  "Pdf mimetype with only mimeType (default config)": MimetypeEntity(mimetype: "application/pdf"),
+  "Html mimetype outlined ": MimetypeEntity(mimetype: "text/html", color: Colors.purple, isOutlined: true),
+  "Generic mimetype ": MimetypeEntity(mimetype: "text/plain", color: Colors.brown, isOutlined: true),
+};
+```
 
-This project is a starting point for a Flutter application.
+# Ouput
+---
 
-A few resources to get you started if this is your first Flutter project:
+![image](example.png)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
