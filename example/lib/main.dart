@@ -54,9 +54,14 @@ class _MimeconExampleState extends State<MimeconExample> {
 }
 
 Map<String, MimetypeEntity> mimeTypeData = {
-  "Image jpg mimetype": MimetypeEntity(mimetype: "image/jpg", color: Colors.green, size: 40, isOutlined: false),
-  "Pdf mimetype little": MimetypeEntity(mimetype: "application/pdf", color: Colors.blue, size: 25),
-  "Pdf mimetype with only mimeType (default config)": MimetypeEntity(mimetype: "application/pdf"),
-  "Html mimetype outlined ": MimetypeEntity(mimetype: "text/html", color: Colors.purple, isOutlined: true),
-  "Generic mimetype ": MimetypeEntity(mimetype: "text/plain", color: Colors.brown, isOutlined: true),
+  "Image jpg mimetype": MimetypeEntity(
+      mimetype: "image/jpg", color: Colors.green, size: 40, isOutlined: false),
+  "Pdf mimetype little":
+      MimetypeEntity(mimetype: "application/pdf", color: Colors.blue, size: 25),
+  "Pdf mimetype with only mimeType (default config)":
+      MimetypeEntity(mimetype: "application/pdf"),
+  "Html mimetype outlined ": MimetypeEntity(
+      mimetype: "text/html", color: Colors.purple, isOutlined: true),
+  "Generic mimetype ": MimetypeEntity(
+      mimetype: "text/plain", color: Colors.brown, isOutlined: true),
 };

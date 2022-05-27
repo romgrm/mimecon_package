@@ -24,7 +24,12 @@ class Mimecon extends StatefulWidget {
   /// Defined if the icon is outlined or filled
   final bool isOutlined;
 
-  Mimecon({Key? key, required this.mimetype, this.color = const Color(0xFF858593), this.size = 40.0, this.isOutlined = false})
+  Mimecon(
+      {Key? key,
+      required this.mimetype,
+      this.color = const Color(0xFF858593),
+      this.size = 40.0,
+      this.isOutlined = false})
       : assert(mimetype.isNotEmpty),
         super(key: key);
 
@@ -41,13 +46,15 @@ class _MimeconState extends State<Mimecon> {
 
   @override
   Widget build(BuildContext context) {
-    return _setIcon(widget.mimetype, widget.color, widget.size, widget.isOutlined);
+    return _setIcon(
+        widget.mimetype, widget.color, widget.size, widget.isOutlined);
   }
 
   void catchErrorMimetype(String mimetype) {
     RegExp mimetypePattern = RegExp(r'^[-\w.]+/[-\w.]+$');
     if (!mimetypePattern.hasMatch(mimetype)) {
-      devlog.log("The entered mimetype does not correspond to a standard mimetype format");
+      devlog.log(
+          "The entered mimetype does not correspond to a standard mimetype format");
       devlog.log("Default icon output return");
     }
   }

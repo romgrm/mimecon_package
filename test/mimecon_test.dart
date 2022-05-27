@@ -18,7 +18,8 @@ void main() {
     final iconFinder = find.byIcon(MdiIcons.image);
 
     expect(iconFinder, findsOneWidget);
-    expect((tester.firstWidget(find.byType(Icon)) as Icon).color, const Color(0xFF858593));
+    expect((tester.firstWidget(find.byType(Icon)) as Icon).color,
+        const Color(0xFF858593));
     expect((tester.firstWidget(find.byType(Icon)) as Icon).size, 40);
   });
 

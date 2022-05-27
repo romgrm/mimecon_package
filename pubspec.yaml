@@ -1,5 +1,5 @@
 name: mimecon
-description: A package for bind an icon to a mimeType
+description: A package for bind an icon to a mimeType. You can pass a mimetype label, color, size and others for custom your icon.
 version: 0.0.1
 homepage: https://github.com/romgrm/mimecon_package
 

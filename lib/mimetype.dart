@@ -117,7 +117,10 @@ List<String> libreOfficeCalcMimeType = [
   "application/x-vnd.oasis.opendocument.spreadsheet",
 ];
 
-List<String> ebookMimeType = ["application/vnd.amazon.ebook", "application/epub+zip"];
+List<String> ebookMimeType = [
+  "application/vnd.amazon.ebook",
+  "application/epub+zip"
+];
 
 List<String> compressedFileMimeType = [
   "application/gzip",
