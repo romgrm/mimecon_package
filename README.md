@@ -26,4 +26,6 @@ Pull requests are welcome, I'm a beginner so don't hesitate if you see any corre
 
 ## Additional information
 
-https://github.com/romgrm/mimecon_package
+- All icons come from material_design_icons_flutter package which themselves come from https://materialdesignicons.com/
+
+- https://github.com/romgrm/mimecon_package
