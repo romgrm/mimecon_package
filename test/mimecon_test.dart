@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -18,8 +16,7 @@ void main() {
     final iconFinder = find.byIcon(MdiIcons.image);
 
     expect(iconFinder, findsOneWidget);
-    expect((tester.firstWidget(find.byType(Icon)) as Icon).color,
-        const Color(0xFF858593));
+    expect((tester.firstWidget(find.byType(Icon)) as Icon).color, const Color(0xFF858593));
     expect((tester.firstWidget(find.byType(Icon)) as Icon).size, 40);
   });
 

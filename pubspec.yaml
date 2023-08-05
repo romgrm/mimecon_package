@@ -1,18 +1,17 @@
 name: mimecon
 description: A package for bind an icon to a mimeType. You can pass a mimetype label, color, size and others for custom your icon.
-version: 0.0.2
+version: 1.0.0
 homepage: https://github.com/romgrm/mimecon_package
 
 environment:
-  sdk: ">=2.16.2 <3.0.0"
-  flutter: ">=1.17.0"
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  material_design_icons_flutter: ^5.0.6595
+  material_design_icons_flutter: ^7.0.7296
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^1.0.0
+  flutter_lints: ^2.0.2
