@@ -13,7 +13,7 @@ class Mimecon extends StatefulWidget {
   /// The specific mimeType (eg: image/png, video/mp4, application/pdf...)
   ///
   /// See mimetype.dart for all mimetypes listed
-  final String mimetype;
+  final String? mimetype;
 
   /// Color of icon (only with Color widget)
   final Color color;
@@ -24,14 +24,7 @@ class Mimecon extends StatefulWidget {
   /// Defined if the icon is outlined or filled
   final bool isOutlined;
 
-  Mimecon(
-      {Key? key,
-      required this.mimetype,
-      this.color = const Color(0xFF858593),
-      this.size = 40.0,
-      this.isOutlined = false})
-      : assert(mimetype.isNotEmpty),
-        super(key: key);
+  const Mimecon({Key? key, required this.mimetype, this.color = const Color(0xFF858593), this.size = 40.0, this.isOutlined = false}) : super(key: key);
 
   @override
   State<Mimecon> createState() => _MimeconState();
@@ -46,20 +39,30 @@ class _MimeconState extends State<Mimecon> {
 
   @override
   Widget build(BuildContext context) {
-    return _setIcon(
-        widget.mimetype, widget.color, widget.size, widget.isOutlined);
+    return _setIcon(widget.mimetype, widget.color, widget.size, widget.isOutlined);
   }
 
-  void catchErrorMimetype(String mimetype) {
-    RegExp mimetypePattern = RegExp(r'^[-\w.]+/[-\w.]+$');
-    if (!mimetypePattern.hasMatch(mimetype)) {
-      devlog.log(
-          "The entered mimetype does not correspond to a standard mimetype format");
+  void catchErrorMimetype(String? mimetype) {
+    if (mimetype == null) {
       devlog.log("Default icon output return");
+    } else {
+      RegExp mimetypePattern = RegExp(r'^[-\w.]+/[-\w.]+$');
+      if (!mimetypePattern.hasMatch(mimetype)) {
+        devlog.log("The entered mimetype does not correspond to a standard mimetype format");
+        devlog.log("Default icon output return");
+      }
     }
   }
 
-  Icon _setIcon(String mimeType, color, size, isOutlined) {
+  Icon _setIcon(String? mimeType, color, size, isOutlined) {
+    if (mimeType == null) {
+      return Icon(
+        isOutlined ? MdiIcons.fileOutline : MdiIcons.file,
+        color: color,
+        size: size,
+      );
+    }
+
     try {
       if (imageMimeType.contains(mimeType)) {
         return Icon(
