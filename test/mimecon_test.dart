@@ -6,7 +6,7 @@ import 'package:mimecon/mimecon.dart';
 
 void main() {
   testWidgets('Mimecon should return default icon', (tester) async {
-    await tester.pumpWidget(MaterialApp(
+    await tester.pumpWidget(const MaterialApp(
       home: Scaffold(
           body: Mimecon(
         mimetype: "image/png",
@@ -21,7 +21,7 @@ void main() {
   });
 
   testWidgets('Mimecon should return custom icon', (tester) async {
-    await tester.pumpWidget(MaterialApp(
+    await tester.pumpWidget(const MaterialApp(
       home: Scaffold(
           body: Mimecon(
         mimetype: "image/png",
@@ -34,7 +34,7 @@ void main() {
     expect((tester.firstWidget(find.byType(Icon)) as Icon).size, 20);
   });
   testWidgets('Mimecon should return outlined icon', (tester) async {
-    await tester.pumpWidget(MaterialApp(
+    await tester.pumpWidget(const MaterialApp(
       home: Scaffold(
           body: Mimecon(
         mimetype: "image/png",
@@ -43,6 +43,15 @@ void main() {
     ));
 
     final iconFinder = find.byIcon(MdiIcons.imageOutline);
+
+    expect(iconFinder, findsOneWidget);
+  });
+  testWidgets('Mimecon should return generic icon when mimetype is null', (tester) async {
+    await tester.pumpWidget(const MaterialApp(
+      home: Scaffold(body: Mimecon(mimetype: null)),
+    ));
+
+    final iconFinder = find.byIcon(MdiIcons.file);
 
     expect(iconFinder, findsOneWidget);
   });
