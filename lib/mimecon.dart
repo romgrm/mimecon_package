@@ -24,7 +24,7 @@ class Mimecon extends StatefulWidget {
   /// Defined if the icon is outlined or filled
   final bool isOutlined;
 
-  const Mimecon({Key? key, required this.mimetype, this.color = const Color(0xFF858593), this.size = 40.0, this.isOutlined = false}) : super(key: key);
+  const Mimecon({Key? key, this.mimetype, this.color = const Color(0xFF858593), this.size = 40.0, this.isOutlined = false}) : super(key: key);
 
   @override
   State<Mimecon> createState() => _MimeconState();
