@@ -24,7 +24,7 @@ class Mimecon extends StatefulWidget {
   /// Defined if the icon is outlined or filled
   final bool isOutlined;
 
-  const Mimecon({Key? key, this.mimetype, this.color = const Color(0xFF858593), this.size = 40.0, this.isOutlined = false}) : super(key: key);
+  const Mimecon({Key? key, this.mimetype, this.color = Colors.black54, this.size = 40.0, this.isOutlined = false}) : super(key: key);
 
   @override
   State<Mimecon> createState() => _MimeconState();
@@ -55,14 +55,6 @@ class _MimeconState extends State<Mimecon> {
   }
 
   Icon _setIcon(String? mimeType, color, size, isOutlined) {
-    if (mimeType == null) {
-      return Icon(
-        isOutlined ? MdiIcons.fileOutline : MdiIcons.file,
-        color: color,
-        size: size,
-      );
-    }
-
     try {
       if (imageMimeType.contains(mimeType)) {
         return Icon(
