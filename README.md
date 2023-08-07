@@ -30,4 +30,4 @@ Pull requests are welcome, I'm a beginner so don't hesitate if you see any corre
 
 - https://github.com/romgrm/mimecon_package
 
-- for example project pls visit `mimecon_example`
+- for example project pls visit [mimecon_example](https://github.com/romgrm/mimecon_example)
